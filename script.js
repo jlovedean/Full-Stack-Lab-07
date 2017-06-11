@@ -6,6 +6,8 @@ var Die = function() {
     this.nextDie = document.createElement('div');
     this.nextDie.className = 'square';
     this.nextDie.innerText = randomNumber
+    this.nextDie.addEventListener('click', this.roll.bind(this));
+    this.nextDie.addEventListener('dblclick', this.removeDie.bind(this));
     this.roll();
     document.body.appendChild(this.nextDie);
 };
@@ -31,9 +33,19 @@ this.rollDie.addEventListener('click', function() {
 }
 }.bind(this));
 
+document.getElementById('sum-button').addEventListener('click', function() {
+    var sum = 0;
+    for(var i = 0; i < dice.length; i++) {
+        sum = sum + dice[i].value;
+    }
+    alert('The sum of the dice is ' + sum);
+})
 
-
-
+die.prototype.removeDie = function() {
+    this.nextDie.remove();
+    var index = dice.indexOf(this);
+    dice.splice(index, 1);
+}
 
 
 
