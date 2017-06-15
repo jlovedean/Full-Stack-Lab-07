@@ -1,9 +1,9 @@
 .square {
     height: 3em;
     width: 3em;
-    border: 1px dotted black;
-    float: left;
     font-size: 5em;
+    border: 1px solid black;
+    float: left;
     text-align: center;
     line-height: 3em;
     vertical-align: middle;
